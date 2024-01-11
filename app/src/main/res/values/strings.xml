@@ -15,4 +15,13 @@
     <string name="menu_event">Event</string>
     <string name="menu_studentManual">Student Manual</string>
     <string name="menu_faq">FAQ</string>
+
+    <!--
+        Others...
+
+        a. About the App
+        b. About PHINMA
+        c. Developers
+        d. Contact Info
+    -->
 </resources>
