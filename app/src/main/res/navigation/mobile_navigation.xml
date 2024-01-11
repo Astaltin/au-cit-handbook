@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.au.studenthandbook.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_services"
+        android:name="com.au.studenthandbook.ui.services.ServicesFragment"
+        android:label="@string/menu_services"
+        tools:layout="@layout/fragment_services" />
+    <fragment
+        android:id="@+id/nav_uniform"
+        android:name="com.au.studenthandbook.ui.uniform.UniformFragment"
+        android:label="@string/menu_uniform"
+        tools:layout="@layout/fragment_uniform" />
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.au.studenthandbook.ui.map.MapFragment"
+        android:label="@string/menu_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/nav_scholarship"
+        android:name="com.au.studenthandbook.ui.scholarship.ScholarshipFragment"
+        android:label="@string/menu_scholarship"
+        tools:layout="@layout/fragment_scholarship" />
+    <fragment
+        android:id="@+id/nav_event"
+        android:name="com.au.studenthandbook.ui.event.EventFragment"
+        android:label="@string/menu_event"
+        tools:layout="@layout/fragment_event" />
+    <fragment
+        android:id="@+id/nav_studentManual"
+        android:name="com.au.studenthandbook.ui.student_manual.StudentManualFragment"
+        android:label="@string/menu_studentManual"
+        tools:layout="@layout/fragment_student_manual" />
+    <fragment
+        android:id="@+id/nav_faq"
+        android:name="com.au.studenthandbook.ui.faq.FaqFragment"
+        android:label="@string/menu_faq"
+        tools:layout="@layout/fragment_faq" />
+</navigation>
