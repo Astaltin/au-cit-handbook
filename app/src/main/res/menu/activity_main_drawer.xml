@@ -6,35 +6,35 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_services"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_services"
             android:title="@string/menu_services" />
         <item
             android:id="@+id/nav_uniform"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_uniform"
             android:title="@string/menu_uniform" />
         <item
             android:id="@+id/nav_map"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_map"
             android:title="@string/menu_map" />
         <item
             android:id="@+id/nav_scholarship"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_scholarship"
             android:title="@string/menu_scholarship" />
         <item
             android:id="@+id/nav_event"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_event"
             android:title="@string/menu_event" />
         <item
             android:id="@+id/nav_studentManual"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_student_manual"
             android:title="@string/menu_studentManual" />
         <item
             android:id="@+id/nav_faq"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_faq"
             android:title="@string/menu_faq" />
     </group>
 </menu>
