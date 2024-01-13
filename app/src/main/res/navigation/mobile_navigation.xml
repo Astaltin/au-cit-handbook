@@ -7,64 +7,64 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.au.studenthandbook.ui.home.HomeFragment"
+        android:name="com.au.cit.handbook.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/nav_services"
-        android:name="com.au.studenthandbook.ui.services.ServicesFragment"
+        android:name="com.au.cit.handbook.ui.services.ServicesFragment"
         android:label="@string/menu_services"
         tools:layout="@layout/fragment_services" />
     <fragment
         android:id="@+id/nav_uniform"
-        android:name="com.au.studenthandbook.ui.uniform.UniformFragment"
+        android:name="com.au.cit.handbook.ui.uniform.UniformFragment"
         android:label="@string/menu_uniform"
         tools:layout="@layout/fragment_uniform" />
     <fragment
         android:id="@+id/nav_map"
-        android:name="com.au.studenthandbook.ui.map.MapFragment"
+        android:name="com.au.cit.handbook.ui.map.MapFragment"
         android:label="@string/menu_map"
         tools:layout="@layout/fragment_map" />
     <fragment
         android:id="@+id/nav_scholarship"
-        android:name="com.au.studenthandbook.ui.scholarship.ScholarshipFragment"
+        android:name="com.au.cit.handbook.ui.scholarship.ScholarshipFragment"
         android:label="@string/menu_scholarship"
         tools:layout="@layout/fragment_scholarship" />
     <fragment
         android:id="@+id/nav_event"
-        android:name="com.au.studenthandbook.ui.event.EventFragment"
+        android:name="com.au.cit.handbook.ui.event.EventFragment"
         android:label="@string/menu_event"
         tools:layout="@layout/fragment_event" />
     <fragment
         android:id="@+id/nav_studentManual"
-        android:name="com.au.studenthandbook.ui.student_manual.StudentManualFragment"
+        android:name="com.au.cit.handbook.ui.student_manual.StudentManualFragment"
         android:label="@string/menu_studentManual"
         tools:layout="@layout/fragment_student_manual" />
     <fragment
         android:id="@+id/nav_faq"
-        android:name="com.au.studenthandbook.ui.faq.FaqFragment"
+        android:name="com.au.cit.handbook.ui.faq.FaqFragment"
         android:label="@string/menu_faq"
         tools:layout="@layout/fragment_faq" />
 
     <!-- Others... -->
     <fragment
         android:id="@+id/nav_about"
-        android:name="com.au.studenthandbook.ui.about.AboutFragment"
+        android:name="com.au.cit.handbook.ui.about.AboutFragment"
         android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/nav_phinmaEducation"
-        android:name="com.au.studenthandbook.ui.phinma_education.PhinmaEducationFragment"
+        android:name="com.au.cit.handbook.ui.phinma_education.PhinmaEducationFragment"
         android:label="@string/menu_phinmaEducation"
         tools:layout="@layout/fragment_phinma_education" />
     <fragment
         android:id="@+id/nav_developers"
-        android:name="com.au.studenthandbook.ui.developers.DevelopersFragment"
+        android:name="com.au.cit.handbook.ui.developers.DevelopersFragment"
         android:label="@string/menu_developers"
         tools:layout="@layout/fragment_developers" />
     <fragment
         android:id="@+id/nav_contact"
-        android:name="com.au.studenthandbook.ui.contact.ContactFragment"
+        android:name="com.au.cit.handbook.ui.contact.ContactFragment"
         android:label="@string/menu_contact"
         tools:layout="@layout/fragment_contact" />
 </navigation>
