@@ -1,4 +1,4 @@
-package com.au.studenthandbook.ui.faq;
+package com.au.studenthandbook.ui.developers;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.au.studenthandbook.databinding.FragmentFaqBinding;
+import com.au.studenthandbook.databinding.FragmentDevelopersBinding;
 
-public class FaqFragment extends Fragment {
+public class DevelopersFragment extends Fragment {
 
-    private FragmentFaqBinding binding;
+    private FragmentDevelopersBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        FaqViewModel faqViewModel =
-                new ViewModelProvider(this).get(FaqViewModel.class);
+        DevelopersViewModel developersViewModel =
+                new ViewModelProvider(this).get(DevelopersViewModel.class);
 
-        binding = FragmentFaqBinding.inflate(inflater, container, false);
+        binding = FragmentDevelopersBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textFaq;
-        faqViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textDevelopers;
+        developersViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

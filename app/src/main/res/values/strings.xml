@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">AU Student Handbook</string>
+    <string name="app_name">AU CIT Handbook</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">AU Student Handbook</string>
+    <string name="nav_header_title">AU CIT Handbook</string>
     <string name="nav_header_subtitle">info.au@phinmaed.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -16,12 +16,9 @@
     <string name="menu_studentManual">Student Manual</string>
     <string name="menu_faq">FAQ</string>
 
-    <!--
-        Others...
-
-        a. About the App
-        b. About PHINMA
-        c. Developers
-        d. Contact Info
-    -->
+    <!-- Others... -->
+    <string name="menu_about">About</string>
+    <string name="menu_phinmaEducation">PHINMA Education</string>
+    <string name="menu_developers">Developers</string>
+    <string name="menu_contact">Contact</string>
 </resources>

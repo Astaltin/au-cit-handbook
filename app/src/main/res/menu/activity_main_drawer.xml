@@ -36,5 +36,23 @@
             android:id="@+id/nav_faq"
             android:icon="@drawable/ic_menu_faq"
             android:title="@string/menu_faq" />
+
+        <!-- Others... -->
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="@string/menu_about" />
+        <item
+            android:id="@+id/nav_phinmaEducation"
+            android:icon="@drawable/ic_menu_phinma_logo"
+            android:title="@string/menu_phinmaEducation" />
+        <item
+            android:id="@+id/nav_developers"
+            android:icon="@drawable/ic_menu_developers"
+            android:title="@string/menu_developers" />
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_menu_contact"
+            android:title="@string/menu_contact" />
     </group>
 </menu>

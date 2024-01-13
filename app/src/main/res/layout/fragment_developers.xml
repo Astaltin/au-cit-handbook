@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.student_manual.StudentManualFragment">
+    tools:context=".ui.developers.DevelopersFragment">
 
     <TextView
-        android:id="@+id/text_student_manual"
+        android:id="@+id/text_developers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

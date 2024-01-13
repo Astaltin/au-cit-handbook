@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.student_manual.StudentManualFragment">
+    tools:context=".ui.phinma_education.PhinmaEducationFragment">
 
     <TextView
-        android:id="@+id/text_student_manual"
+        android:id="@+id/text_phinma_education"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

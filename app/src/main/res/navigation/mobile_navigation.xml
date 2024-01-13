@@ -45,4 +45,26 @@
         android:name="com.au.studenthandbook.ui.faq.FaqFragment"
         android:label="@string/menu_faq"
         tools:layout="@layout/fragment_faq" />
+
+    <!-- Others... -->
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.au.studenthandbook.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_phinmaEducation"
+        android:name="com.au.studenthandbook.ui.phinma_education.PhinmaEducationFragment"
+        android:label="@string/menu_phinmaEducation"
+        tools:layout="@layout/fragment_phinma_education" />
+    <fragment
+        android:id="@+id/nav_developers"
+        android:name="com.au.studenthandbook.ui.developers.DevelopersFragment"
+        android:label="@string/menu_developers"
+        tools:layout="@layout/fragment_developers" />
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.au.studenthandbook.ui.contact.ContactFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/fragment_contact" />
 </navigation>
