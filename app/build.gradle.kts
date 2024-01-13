@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.au.studenthandbook"
+    namespace = "com.au.cit.handbook"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.au.studenthandbook"
+        applicationId = "com.au.cit.handbook"
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -18,7 +18,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
