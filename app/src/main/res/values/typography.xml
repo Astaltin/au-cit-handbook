@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="heading_large">34sp</dimen>
+    <dimen name="heading_normal">27sp</dimen>
+
+    <dimen name="body_text_medium">24sp</dimen>
+    <dimen name="body_text_normal">18sp</dimen>
+    <dimen name="body_text_small">13sp</dimen>
+
+    <dimen name="body_lineHeight_large">40.8sp</dimen>
+    <dimen name="body_lineHeight_medium">28.8sp</dimen>
+    <dimen name="body_lineHeight_normal">36sp</dimen>
+</resources>
