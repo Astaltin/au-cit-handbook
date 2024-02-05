@@ -55,16 +55,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_black"
-                    android:text="About PHINMA Education"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/heading_large"
-                    app:lineHeight="@dimen/body_lineHeight_large" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
                     android:text="For more than a decade, PHINMA built its reputation on transforming existing educational institutions to better serve Filipino students. PHINMA Education begins this process by strategically selecting a school from a key growth area and thoroughly transforming its academics, operations, and student community in order to ensure success for Filipino youth coming from low-income families."
                     android:textColor="@color/black"

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.au.cit.handbook.databinding.FragmentContactBinding;
+import com.au.cit.handbook.databinding.FragmentPhinmaEducationBinding;
 
 public class ContactFragment extends Fragment {
 
@@ -18,15 +19,9 @@ public class ContactFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ContactViewModel contactViewModel =
-                new ViewModelProvider(this).get(ContactViewModel.class);
-
         binding = FragmentContactBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textContact;
-        contactViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        return binding.getRoot();
     }
 
     @Override

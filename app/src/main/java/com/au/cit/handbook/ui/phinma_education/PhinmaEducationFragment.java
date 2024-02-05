@@ -18,8 +18,8 @@ public class PhinmaEducationFragment extends Fragment {
 
     private FragmentPhinmaEducationBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPhinmaEducationBinding.inflate(inflater, container, false);
 
         return binding.getRoot();
