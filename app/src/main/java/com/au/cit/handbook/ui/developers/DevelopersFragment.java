@@ -18,15 +18,9 @@ public class DevelopersFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DevelopersViewModel developersViewModel =
-                new ViewModelProvider(this).get(DevelopersViewModel.class);
-
         binding = FragmentDevelopersBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textDevelopers;
-        developersViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        return binding.getRoot();
     }
 
     @Override
