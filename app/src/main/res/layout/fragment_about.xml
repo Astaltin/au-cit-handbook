@@ -4,19 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.about.AboutFragment">
+    tools:context=".ui.phinma_education.PhinmaEducationFragment">
 
-    <TextView
-        android:id="@+id/text_about"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/phinma_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_200"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/phinma_logo_vertical_spacing"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/phinma_logo_vertical_spacing"
+                app:layout_constraintBottom_toTopOf="@+id/about_phinma"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:importantForAccessibility="no"
+                    app:srcCompat="@drawable/phinma_logo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/about_phinma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_100"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/phinma_logo_vertical_spacing"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_spacing"
+                app:layout_constraintBottom_toTopOf="@+id/mission"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phinma_logo">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="About"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/heading_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:fontFamily="@font/roboto"
+                    android:text="Welcome to CIT Informative Guide, the essential companion tailored exclusively for students of the esteemed College of Information Technology (CIT). Whether you're a fresh face navigating the intricacies of IT academia or a seasoned student aiming to deepen your engagement within the CIT community, this app is designed to cater to your diverse needs, aspirations, and academic goals."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:fontFamily="@font/roboto"
+                    android:text="CIT Informative Guide is your digital roadmap to success within CIT. Packed with features and functionalities, it offers practical tips, curated resources, event updates, faculty profiles, and feedback mechanisms. Stay informed and engaged with the latest events and networking opportunities, access curated resources and tutorials, get to know your faculty, and never miss a class with our scheduling feature."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:fontFamily="@font/roboto"
+                    android:text="Join us on this transformative journey of exploration, growth, and empowerment within the College of Information Technology. With CIT Informative Guide as your trusted companion, the possibilities are endless, and your success is assured."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

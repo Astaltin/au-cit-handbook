@@ -18,15 +18,9 @@ public class ScholarshipFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ScholarshipViewModel scholarshipViewModel =
-                new ViewModelProvider(this).get(ScholarshipViewModel.class);
-
         binding = FragmentScholarshipBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textScholarship;
-        scholarshipViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        return binding.getRoot();
     }
 
     @Override

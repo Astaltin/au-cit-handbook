@@ -1,22 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white_100"
     tools:context=".ui.services.ServicesFragment">
 
-    <TextView
-        android:id="@+id/text_services"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:paddingTop="@dimen/activity_vertical_spacing"
+        android:paddingBottom="@dimen/activity_vertical_spacing">
+
+
+        <LinearLayout
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="27dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/academics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Admission"
+                android:textColor="@color/black"
+                android:textSize="@dimen/heading_normal"
+                app:lineHeight="@dimen/body_lineHeight_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Incoming freshmen"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Transferee"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/academics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_700_10"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/scholarships"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/about">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="27dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Academics"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/heading_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="&#x2022; Basic Education (Junior High School and Senior High School)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="&#x2022; College Programs (Bachelor’s Degree)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="&#x2022; Graduate School (Master’s Degree)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scholarships"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/academics">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Scholarships"
+                android:textColor="@color/black"
+                android:textSize="@dimen/heading_normal"
+                app:lineHeight="@dimen/body_lineHeight_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; PHINMA National Scholarship"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Academic Scholarship"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Dean Lister"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Handog Kaibigan Scholarship"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Educational Discount for Government Employees(EDGE)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Solo Parent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Alumni Discount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Kapamilya Discount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Student Assistantship"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Scholarship Benefit for Employee Dependents"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; Performing Arts"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="&#x2022; AUSSG Financial Assistance"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

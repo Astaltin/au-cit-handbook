@@ -18,15 +18,9 @@ public class EventFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        EventViewModel eventViewModel =
-                new ViewModelProvider(this).get(EventViewModel.class);
-
         binding = FragmentEventBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textEvent;
-        eventViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        return binding.getRoot();
     }
 
     @Override

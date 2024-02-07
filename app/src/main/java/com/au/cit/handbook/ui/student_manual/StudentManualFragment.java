@@ -18,15 +18,9 @@ public class StudentManualFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        StudentManualViewModel studentManualViewModel =
-                new ViewModelProvider(this).get(StudentManualViewModel.class);
-
         binding = FragmentStudentManualBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textStudentManual;
-        studentManualViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        return binding.getRoot();
     }
 
     @Override

@@ -35,22 +35,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:fontFamily="@font/roboto"
+                android:fontFamily="@font/roboto_bold"
                 android:gravity="center_horizontal"
                 android:text="Brienzell Kate Calpito"
                 android:textColor="@color/black"
-                android:textSize="@dimen/body_text_normal"
+                android:textSize="@dimen/body_text_medium"
                 app:lineHeight="@dimen/body_lineHeight_normal" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_horizontal"
+                android:text="She is mainly responsible on the ideation and documentation and is also a programmer."
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/edward_gulmayo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_spacing"
-            android:layout_marginBottom="@dimen/activity_vertical_spacing"
-            android:background="@color/white_200"
+            android:background="@color/blue_700_10"
             android:orientation="vertical"
             android:paddingTop="0dp"
             app:layout_constraintBottom_toTopOf="@id/ralph_gonzales"
@@ -79,13 +86,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:fontFamily="@font/roboto"
+                    android:fontFamily="@font/roboto_bold"
                     android:gravity="center_horizontal"
                     android:text="Edward Gulmayo"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/body_text_normal"
+                    android:textSize="@dimen/body_text_medium"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_horizontal"
+                    android:text="He is the team leader of the Group. He sees the overall design and systemof the app. and leads the programming."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal" />
             </LinearLayout>
         </LinearLayout>
 
@@ -93,11 +109,11 @@
             android:id="@+id/ralph_gonzales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
             android:layout_marginTop="@dimen/activity_vertical_spacing"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
             android:layout_marginBottom="@dimen/activity_vertical_spacing"
             android:orientation="vertical"
-            android:layout_marginStart="@dimen/activity_vertical_margin"
-            android:layout_marginEnd="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toTopOf="@id/daniel_dupra"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,20 +129,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:fontFamily="@font/roboto"
+                android:fontFamily="@font/roboto_bold"
                 android:gravity="center_horizontal"
                 android:text="Ralph Lawrence Gonzales"
                 android:textColor="@color/black"
-                android:textSize="@dimen/body_text_normal"
+                android:textSize="@dimen/body_text_medium"
                 app:lineHeight="@dimen/body_lineHeight_normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_horizontal"
+                android:text="He contributes in programming, ideation and content creation."
+                android:textColor="@color/black"
+                android:textSize="@dimen/body_text_normal" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/daniel_dupra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_spacing"
-            android:background="@color/white_200"
+            android:background="@color/blue_700_10"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -153,12 +178,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:fontFamily="@font/roboto"
+                    android:fontFamily="@font/roboto_bold"
                     android:gravity="center_horizontal"
                     android:text="Daniel Dupra"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/body_text_normal"
+                    android:textSize="@dimen/body_text_medium"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_horizontal"
+                    android:text="He also contributes in programming, user flow and content creation."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal" />
             </LinearLayout>
 
         </LinearLayout>

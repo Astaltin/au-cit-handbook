@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white_100"
     tools:context=".ui.phinma_education.PhinmaEducationFragment">
 
     <ScrollView
@@ -67,7 +68,7 @@
                 android:id="@+id/mission"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#212C61"
+                android:background="@color/blue_700_10"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_spacing"
@@ -84,7 +85,7 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="Our Mission"
                     android:textAlignment="center"
-                    android:textColor="@color/white_100"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
 
@@ -95,7 +96,7 @@
                     android:fontFamily="@font/roboto_bold_italic"
                     android:text="&quot;To make lives better through education&quot;"
                     android:textAlignment="center"
-                    android:textColor="@color/white_100"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/body_text_medium"
                     app:lineHeight="@dimen/body_lineHeight_medium" />
             </LinearLayout>
@@ -175,7 +176,7 @@
                 android:id="@+id/our_values"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#212C61"
+                android:background="@color/blue_700_10"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_spacing"
@@ -192,7 +193,7 @@
                     android:layout_marginBottom="@dimen/activity_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
                     android:text="Our Values"
-                    android:textColor="@color/white_100"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/heading_normal"
                     app:lineHeight="@dimen/body_lineHeight_medium" />
 
@@ -202,7 +203,7 @@
                     android:layout_marginBottom="@dimen/activity_vertical_spacing"
                     android:fontFamily="@font/roboto"
                     android:text="PHINMA Education seeks to provide quality tertiary education to underserved Filipino youth. Our various learning strategies and interventions equip our students with professional and core work skills to attain gainful employment, whether or not they graduate. By knowing who our students are and where they come from, we are able to tailor our programs to what they want to achieve. We are guided by the following core values: "
-                    android:textColor="@color/white_100"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
 
@@ -235,7 +236,7 @@
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="Integrity"
                                 android:textAlignment="center"
-                                android:textColor="@color/white_100"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/body_text_normal"
                                 app:lineHeight="@dimen/body_lineHeight_normal" />
                         </LinearLayout>
@@ -260,7 +261,7 @@
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="Competence"
                                 android:textAlignment="center"
-                                android:textColor="@color/white_100"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/body_text_normal"
                                 app:lineHeight="@dimen/body_lineHeight_normal" />
                         </LinearLayout>
@@ -285,7 +286,7 @@
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="Commitment"
                                 android:textAlignment="center"
-                                android:textColor="@color/white_100"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/body_text_normal"
                                 app:lineHeight="@dimen/body_lineHeight_normal" />
                         </LinearLayout>
@@ -310,7 +311,7 @@
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="Professionalism"
                                 android:textAlignment="center"
-                                android:textColor="@color/white_100"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/body_text_normal"
                                 app:lineHeight="@dimen/body_lineHeight_normal" />
                         </LinearLayout>
@@ -335,7 +336,7 @@
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="Teamwork"
                                 android:textAlignment="center"
-                                android:textColor="@color/white_100"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/body_text_normal"
                                 app:lineHeight="@dimen/body_lineHeight_normal" />
                         </LinearLayout>
@@ -360,7 +361,7 @@
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="Openness"
                                 android:textAlignment="center"
-                                android:textColor="@color/white_100"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/body_text_normal"
                                 app:lineHeight="@dimen/body_lineHeight_normal" />
                         </LinearLayout>
@@ -384,7 +385,7 @@
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="Love of Country"
                                 android:textAlignment="center"
-                                android:textColor="@color/white_100"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/body_text_normal"
                                 app:lineHeight="@dimen/body_lineHeight_normal" />
                         </LinearLayout>
