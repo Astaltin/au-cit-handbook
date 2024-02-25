@@ -1,7 +1,11 @@
 package com.au.cit.handbook;
 
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.AbsoluteSizeSpan;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -13,6 +17,8 @@ import com.au.cit.handbook.databinding.ActivityMainBinding;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
+
         /*
         FLOATING BUTTON
 

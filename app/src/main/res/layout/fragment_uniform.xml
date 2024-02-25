@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grayshade"
-    tools:context=".ui.scholarship.ScholarshipFragment">
+    tools:context=".ui.ScholarshipFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="32dp"
-        tools:context=".ui.uniform.UniformFragment">
+        tools:context=".ui.UniformFragment">
 
         <ImageView
             android:id="@+id/imageView2"

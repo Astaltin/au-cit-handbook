@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:importantForAccessibility="no"
-    tools:context=".ui.student_manual.StudentManualFragment">
+    tools:context=".ui.StudentManualFragment">
 
 </WebView>

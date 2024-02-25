@@ -1,4 +1,4 @@
-package com.au.cit.handbook.ui.map;
+package com.au.cit.handbook.ui;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

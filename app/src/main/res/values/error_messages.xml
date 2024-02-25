@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    -->
+    <string name="error_first_name_missing">Enter a first name</string>
+    <string name="error_first_name_invalid">Enter a valid first name</string>
+    <!--    -->
+    <string name="error_last_name_missing">Enter a last name</string>
+    <string name="error_last_name_invalid">Enter a valid last name</string>
+    <!--    -->
+    <string name="error_email_missing">Enter an email</string>
+    <string name="error_email_invalid">Enter a valid email</string>
+    <!--    -->
+    <string name="error_password_missing">Enter a password</string>
+    <string name="error_password_min_length">Password must be at least 8 characters long</string>
+    <string name="error_password_does_not_match">Password does not match</string>
+</resources>

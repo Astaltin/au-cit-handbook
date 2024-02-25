@@ -1,4 +1,4 @@
-package com.au.cit.handbook.ui.phinma_education;
+package com.au.cit.handbook.ui;
 
 import android.content.Intent;
 import android.net.Uri;

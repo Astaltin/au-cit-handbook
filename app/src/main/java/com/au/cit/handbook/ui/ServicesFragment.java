@@ -1,4 +1,4 @@
-package com.au.cit.handbook.ui.services;
+package com.au.cit.handbook.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

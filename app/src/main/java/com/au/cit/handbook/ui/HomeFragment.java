@@ -1,4 +1,4 @@
-package com.au.cit.handbook.ui.home;
+package com.au.cit.handbook.ui;
 
 import android.net.Uri;
 import android.os.Bundle;

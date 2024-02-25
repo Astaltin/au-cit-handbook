@@ -1,11 +1,9 @@
 package com.au.cit.handbook;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,37 +12,124 @@ import com.au.cit.handbook.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private ActivityRegisterBinding binding;
+    private final int FIRST_NAME_LENGTH_MIN;
+    private final int LAST_NAME_LENGTH_MIN;
+    private final int PASSWORD_LENGTH_MIN;
+    {
+        FIRST_NAME_LENGTH_MIN = 2;
+        LAST_NAME_LENGTH_MIN = 2;
+        PASSWORD_LENGTH_MIN = 8;
+    }
 
-    EditText _email, _password, _name;
-    Button _register;
-    private Context ctx;
+    private ActivityRegisterBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_register);
+        setContentView(binding.getRoot());
 
-        ctx = this;
-        _email = (EditText) findViewById(R.id._email);
-        _password = (EditText) findViewById(R.id._password);
-        _name = (EditText) findViewById(R.id._name);
-        _register = (Button) findViewById(R.id._register_btn);
-        _register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String _email_ = String.valueOf(_email.getText());
-                String _password_ = String.valueOf(_password.getText());
-                String _name_ = String.valueOf(_name.getText());
-                Toast.makeText(ctx, _name_ + " " + _email_ + " " + _password_, Toast.LENGTH_LONG).show();
-            }
-        });
+        setupEventListeners();
     }
 
-    public void login(View v) {
-        Intent i = new Intent(ctx, LoginActivity.class);
-        startActivity(i);
+    private void setupEventListeners() {
+        binding.buttonSignUp.setOnClickListener(this::buttonSignupAction);
+    }
+
+    /*---------------------------------------------------------------------------
+     * HANDLERS
+     *---------------------------------------------------------------------------
+     *
+     *
+     */
+    private void buttonSignupAction(View v) {
+        String firstName =
+                binding.editTextFirstName.getText().toString().trim();
+        String lastName =
+                binding.editTextLastName.getText().toString().trim();
+        String email =
+                binding.editTextEmail.getText().toString().trim();
+        String password =
+                binding.editTextPassword.getText().toString().trim();
+        String passwordConfirm =
+                binding.editTextPasswordConfirm.getText().toString().trim();
+
+        boolean isValid = true;
+        isValid &= validateFirstName(firstName);
+        isValid &= validateLastName(lastName);
+        isValid &= validateEmail(email);
+        isValid &= validatePassword(password);
+        isValid &= validatePasswordConfirm(passwordConfirm, password);
+        if (isValid) {
+            finish();
+            Toast.makeText(
+                    getApplicationContext(), "Registration success!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /*---------------------------------------------------------------------------
+     * HELPERS
+     *---------------------------------------------------------------------------
+     *
+     *
+     */
+    private boolean validateFirstName(String firstName) {
+        if (TextUtils.isEmpty(firstName)) {
+            binding.editTextFirstName.setError(getString(R.string.error_first_name_missing));
+            return false;
+        } else if (firstName.length() < FIRST_NAME_LENGTH_MIN) {
+            binding.editTextFirstName.setError(getString(R.string.error_first_name_invalid));
+            return false;
+        }
+        binding.editTextFirstName.setError(null);
+        return true;
+    }
+
+    private boolean validateLastName(String lastName) {
+        if (TextUtils.isEmpty(lastName)) {
+            binding.editTextLastName.setError(getString(R.string.error_last_name_missing));
+            return false;
+        } else if (lastName.length() < LAST_NAME_LENGTH_MIN) {
+            binding.editTextLastName.setError(getString(R.string.error_last_name_invalid));
+            return false;
+        }
+        binding.editTextLastName.setError(null);
+        return true;
+    }
+
+    private boolean validateEmail(String email) {
+        if (TextUtils.isEmpty(email)) {
+            binding.editTextEmail.setError(getString(R.string.error_email_missing));
+            return false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.editTextEmail.setError(getString(R.string.error_email_invalid));
+            return false;
+        }
+        binding.editTextEmail.setError(null);
+        return true;
+    }
+
+    private boolean validatePassword(String password) {
+        if (TextUtils.isEmpty(password)) {
+            binding.editTextPassword.setError(getString(R.string.error_password_missing));
+            return false;
+        } else if (password.length() < PASSWORD_LENGTH_MIN) {
+            binding.editTextPassword.setError(
+                    getString(R.string.error_password_min_length));
+            return false;
+        }
+        binding.editTextPassword.setError(null);
+        return true;
+    }
+
+    private boolean validatePasswordConfirm(String passwordConfirm, String password) {
+        if (TextUtils.isEmpty(passwordConfirm) || !passwordConfirm.matches(password)) {
+            binding.editTextPasswordConfirm.setError(
+                    getString(R.string.error_password_does_not_match));
+            return false;
+        }
+        binding.editTextPasswordConfirm.setError(null);
+        return true;
     }
 }
