@@ -19,6 +19,7 @@ public class StudentManualFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         binding = FragmentStudentManualBinding.inflate(inflater, container, false);
         WebView studentManualWebView = binding.studentManualWebView;
 

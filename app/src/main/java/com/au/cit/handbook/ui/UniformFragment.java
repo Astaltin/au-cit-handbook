@@ -1,25 +1,23 @@
-package com.au.cit.handbook.ui.event;
+package com.au.cit.handbook.ui.uniform;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.au.cit.handbook.databinding.FragmentEventBinding;
+import com.au.cit.handbook.databinding.FragmentUniformBinding;
 
-public class EventFragment extends Fragment {
+public class UniformFragment extends Fragment {
 
-    private FragmentEventBinding binding;
+    private FragmentUniformBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentEventBinding.inflate(inflater, container, false);
 
+        binding = FragmentUniformBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 

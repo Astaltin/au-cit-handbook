@@ -20,13 +20,14 @@ public class PhinmaEducationFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentPhinmaEducationBinding.inflate(inflater, container, false);
 
+        binding = FragmentPhinmaEducationBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
 
         view.findViewById(R.id.knowMoreButton).setOnClickListener(new View.OnClickListener() {

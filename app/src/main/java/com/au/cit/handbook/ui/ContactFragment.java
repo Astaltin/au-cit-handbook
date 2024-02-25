@@ -1,4 +1,4 @@
-package com.au.cit.handbook.ui.about;
+package com.au.cit.handbook.ui.contact;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.au.cit.handbook.databinding.FragmentAboutBinding;
+import com.au.cit.handbook.databinding.FragmentContactBinding;
 
-public class AboutFragment extends Fragment {
+public class ContactFragment extends Fragment {
 
-    private FragmentAboutBinding binding;
+    private FragmentContactBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentAboutBinding.inflate(inflater, container, false);
 
+        binding = FragmentContactBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
