@@ -74,6 +74,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -93,6 +94,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -112,6 +114,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -131,6 +134,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -150,6 +154,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -169,6 +174,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -188,6 +194,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -207,6 +214,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

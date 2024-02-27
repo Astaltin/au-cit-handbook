@@ -1,5 +1,5 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -79,8 +79,8 @@
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/body2">
 
             <TextView
@@ -144,8 +144,8 @@
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView1">
 
             <TextView
@@ -198,8 +198,8 @@
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView2">
 
             <TextView
@@ -265,8 +265,8 @@ Note: To be identified by the Registrar’s office
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView3">
 
             <TextView
@@ -319,8 +319,8 @@ Note: To be identified by the Registrar’s office
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView4">
 
             <TextView
@@ -384,8 +384,8 @@ Note: To be identified by the Registrar’s office
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView5">
 
             <TextView
@@ -449,8 +449,8 @@ Note: To be identified by the Registrar’s office
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView6">
 
             <TextView
@@ -514,8 +514,8 @@ Note: To be identified by the Registrar’s office
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView7">
 
             <TextView
@@ -581,8 +581,8 @@ Note: To be identified by the Registrar’s office
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView8">
 
             <TextView
@@ -716,11 +716,11 @@ Coverage:\n\n
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="@color/white_100"
             app:cardCornerRadius="10dp"
-            app:layout_goneMarginBottom="16dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView8">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView8"
+            app:layout_goneMarginBottom="16dp">
 
             <TextView
                 android:id="@+id/textContent11"
@@ -781,12 +781,12 @@ Coverage:\n\n
             android:layout_height="270dp"
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="@color/white_100"
-            app:layout_goneMarginBottom="16dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView8">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView8"
+            app:layout_goneMarginBottom="16dp">
 
             <TextView
                 android:id="@+id/textContent12"
