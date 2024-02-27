@@ -1,11 +1,13 @@
 package com.au.cit.handbook;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.au.cit.handbook.databinding.ActivityRegisterBinding;
@@ -15,13 +17,13 @@ public class RegisterActivity extends AppCompatActivity {
     private final int FIRST_NAME_LENGTH_MIN;
     private final int LAST_NAME_LENGTH_MIN;
     private final int PASSWORD_LENGTH_MIN;
+    private ActivityRegisterBinding binding;
+
     {
         FIRST_NAME_LENGTH_MIN = 2;
         LAST_NAME_LENGTH_MIN = 2;
         PASSWORD_LENGTH_MIN = 8;
     }
-
-    private ActivityRegisterBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +32,54 @@ public class RegisterActivity extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setupEventListeners();
+        actionBarInit();
+        eventListenersInit();
     }
 
-    private void setupEventListeners() {
+    @SuppressLint("MissingSuperCall")
+    @Override
+    /*
+     * For some reason, the IDE is detecting this method of AppCompatActivity
+     * as deprecated. As of 2022, stated by ChatGPT, that is not the case.
+     * In fact, it is still the standard method for programming the on back
+     * pressed.
+     *
+     * SO BASICALLY, JUST IGNORE THE DEPRECATION WARNING. ;-;
+     *
+     * - Edward Gulmayo
+     */
+    public void onBackPressed() {
+        finish();
+        Intent i = new Intent(
+                getApplicationContext(), AuthenticationActivity.class);
+        startActivity(i);
+    }
+
+    /*---------------------------------------------------------------------------
+     * INITIALIZATION
+     *---------------------------------------------------------------------------
+     *
+     *
+     */
+    private void actionBarInit() {
+        setSupportActionBar(binding.actionBar.toolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowTitleEnabled(false);
+        }
+        binding.actionBar.toolbar.setNavigationOnClickListener(v -> {
+            finish();
+            Intent i = new Intent(
+                    getApplicationContext(), AuthenticationActivity.class);
+            startActivity(i);
+        });
+    }
+
+    private void eventListenersInit() {
         binding.buttonSignUp.setOnClickListener(this::buttonSignupAction);
+        binding.login.setOnClickListener(this::loginAction);
     }
 
     /*---------------------------------------------------------------------------
@@ -61,11 +106,23 @@ public class RegisterActivity extends AppCompatActivity {
         isValid &= validateEmail(email);
         isValid &= validatePassword(password);
         isValid &= validatePasswordConfirm(passwordConfirm, password);
-        if (isValid) {
+        if (!isValid) {
+            return;
+        } else {
             finish();
-            Toast.makeText(
-                    getApplicationContext(), "Registration success!", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+            i.putExtra("email", email);
+            startActivity(i);
         }
+    }
+
+    /**
+     * @deprecated
+     */
+    private void loginAction(View v) {
+        finish();
+        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(i);
     }
 
     /*---------------------------------------------------------------------------
