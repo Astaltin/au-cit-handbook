@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.au.cit.handbook" />
+                  <option name="mobileSdkAppId" value="1:898857046786:android:023bc6fb14bd84313da81b" />
+                  <option name="projectId" value="au-cit-handbook" />
+                  <option name="projectNumber" value="898857046786" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

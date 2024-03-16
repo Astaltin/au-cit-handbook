@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="ok">200</integer>
+    <integer name="no_content">204</integer>
+
+    <integer name="found">302</integer>
+
+    <integer name="invalid_data">400</integer>
+    <integer name="unauthorized">401</integer>
+    <integer name="forbidden">403</integer>
+
+    <integer name="server_error">500</integer>
+</resources>

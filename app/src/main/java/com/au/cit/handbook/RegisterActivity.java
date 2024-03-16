@@ -3,27 +3,33 @@ package com.au.cit.handbook;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.au.cit.handbook.databinding.ActivityRegisterBinding;
+import com.au.cit.handbook.singleton.Volley;
+import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private final int FIRST_NAME_LENGTH_MIN;
-    private final int LAST_NAME_LENGTH_MIN;
-    private final int PASSWORD_LENGTH_MIN;
     private ActivityRegisterBinding binding;
 
-    {
-        FIRST_NAME_LENGTH_MIN = 2;
-        LAST_NAME_LENGTH_MIN = 2;
-        PASSWORD_LENGTH_MIN = 8;
-    }
+    private boolean setBackButtonEnabled;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +38,10 @@ public class RegisterActivity extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        actionBarInit();
-        eventListenersInit();
+        setBackButtonEnabled = true;
+
+        initActionBar();
+        initEventListeners();
     }
 
     @SuppressLint("MissingSuperCall")
@@ -49,19 +57,22 @@ public class RegisterActivity extends AppCompatActivity {
      * - Edward Gulmayo
      */
     public void onBackPressed() {
-        finish();
-        Intent i = new Intent(
-                getApplicationContext(), AuthenticationActivity.class);
-        startActivity(i);
+        if (setBackButtonEnabled) {
+            finish();
+            Intent i = new Intent(
+                    this, AuthenticationActivity.class);
+            startActivity(i);
+        }
     }
 
-    /*---------------------------------------------------------------------------
-     * INITIALIZATION
-     *---------------------------------------------------------------------------
-     *
-     *
-     */
-    private void actionBarInit() {
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        binding = null;
+    }
+
+    private void initActionBar() {
         setSupportActionBar(binding.actionBar.toolbar);
 
         ActionBar actionBar = getSupportActionBar();
@@ -69,124 +80,186 @@ public class RegisterActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(false);
         }
+
         binding.actionBar.toolbar.setNavigationOnClickListener(v -> {
-            finish();
-            Intent i = new Intent(
-                    getApplicationContext(), AuthenticationActivity.class);
-            startActivity(i);
+            if (setBackButtonEnabled) {
+                finish();
+                Intent i = new Intent(
+                        this, AuthenticationActivity.class);
+                startActivity(i);
+            }
         });
     }
 
-    private void eventListenersInit() {
-        binding.buttonSignUp.setOnClickListener(this::buttonSignupAction);
-        binding.login.setOnClickListener(this::loginAction);
+    private void initEventListeners() {
+        binding.buttonRegister.setOnClickListener(this::buttonRegisterHandler);
     }
 
-    /*---------------------------------------------------------------------------
-     * HANDLERS
-     *---------------------------------------------------------------------------
-     *
-     *
-     */
-    private void buttonSignupAction(View v) {
-        String firstName =
-                binding.editTextFirstName.getText().toString().trim();
-        String lastName =
-                binding.editTextLastName.getText().toString().trim();
-        String email =
-                binding.editTextEmail.getText().toString().trim();
-        String password =
-                binding.editTextPassword.getText().toString().trim();
-        String passwordConfirm =
-                binding.editTextPasswordConfirm.getText().toString().trim();
+    private void buttonRegisterHandler(View v) {
+        setEventsEnabled(false);
 
-        boolean isValid = true;
-        isValid &= validateFirstName(firstName);
-        isValid &= validateLastName(lastName);
-        isValid &= validateEmail(email);
-        isValid &= validatePassword(password);
-        isValid &= validatePasswordConfirm(passwordConfirm, password);
-        if (!isValid) {
+        String givenName = binding.editTextGivenName.getText().toString().trim();
+        String familyName = binding.editTextFamilyName.getText().toString().trim();
+        String email = binding.editTextEmail.getText().toString().trim();
+        String password = binding.editTextPassword.getText().toString().trim();
+        String passwordConfirm = binding.editTextPasswordConfirm.getText().toString().trim();
+
+        signup(givenName, familyName, email, password, passwordConfirm);
+    }
+
+    private void signup(
+            String givenName, String familyName,
+            String email, String password, String passwordConfirm) {
+
+        JSONObject jsonRequest = new JSONObject();
+        try {
+            jsonRequest.put("givenName", givenName);
+            jsonRequest.put("familyName", familyName);
+            jsonRequest.put("email", email);
+            jsonRequest.put("password", password);
+            jsonRequest.put("passwordConfirm", passwordConfirm);
+
+        } catch (JSONException e) {
+
+            e.printStackTrace();
+
+            showSnackbar(getString(R.string.server_error));
+
+            setEventsEnabled(true);
+
             return;
-        } else {
+        }
+
+        String url = getString(R.string.AUTH_REGISTER);
+        JsonObjectRequest jsonObjectRequest =
+                new JsonObjectRequest(Request.Method.POST, url, jsonRequest,
+                        this::handleResponseSuccess,
+                        this::handleResponseError) {
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String, String> headers = new HashMap<>();
+                        headers.put("Content-Type", getString(R.string.json));
+
+                        return headers;
+                    }
+                };
+
+        RequestQueue requestQueue = Volley.getInstance(getApplicationContext())
+                .getRequestQueue();
+        requestQueue.add(jsonObjectRequest);
+    }
+
+    private void handleResponseSuccess(JSONObject response) {
+        try {
             finish();
-            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-            i.putExtra("email", email);
+            Intent i = new Intent(this, LoginActivity.class);
+            i.putExtra("email", binding.editTextEmail.getText().toString().trim());
+            i.putExtra("body", response.getString("body"));
             startActivity(i);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+            showSnackbar(getString(R.string.server_error));
+
+            setEventsEnabled(true);
         }
     }
 
-    /**
-     * @deprecated
-     */
-    private void loginAction(View v) {
-        finish();
-        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(i);
+    @SuppressLint("ResourceType")
+    private void handleResponseError(VolleyError error) {
+
+        if (error.networkResponse == null) {
+            return;
+        }
+
+        String networkResponseError =
+                new String(error.networkResponse.data, StandardCharsets.UTF_8);
+        try {
+            if (error.networkResponse.statusCode
+                    == Integer.parseInt(getString(R.integer.invalid_data))) {
+
+                failValidationError(networkResponseError);
+            }
+            if (error.networkResponse.statusCode
+                    == Integer.parseInt(getString(R.integer.server_error))) {
+
+                failServerError(networkResponseError);
+            }
+
+            setEventsEnabled(true);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+            showSnackbar(getString(R.string.server_error));
+
+            setEventsEnabled(true);
+        }
     }
 
-    /*---------------------------------------------------------------------------
-     * HELPERS
-     *---------------------------------------------------------------------------
-     *
-     *
-     */
-    private boolean validateFirstName(String firstName) {
-        if (TextUtils.isEmpty(firstName)) {
-            binding.editTextFirstName.setError(getString(R.string.error_first_name_missing));
-            return false;
-        } else if (firstName.length() < FIRST_NAME_LENGTH_MIN) {
-            binding.editTextFirstName.setError(getString(R.string.error_first_name_invalid));
-            return false;
-        }
-        binding.editTextFirstName.setError(null);
-        return true;
+    private void failValidationError(String networkResponseError) throws JSONException {
+
+        JSONObject registerValidationError =
+                new JSONObject(networkResponseError)
+                        .getJSONObject("registerValidationError");
+
+        setErrorIfPresent(
+                registerValidationError, "givenName",
+                binding.editTextGivenName);
+        setErrorIfPresent(
+                registerValidationError, "familyName",
+                binding.editTextFamilyName);
+        setErrorIfPresent(
+                registerValidationError, "email",
+                binding.editTextEmail);
+        setErrorIfPresent(
+                registerValidationError, "password",
+                binding.editTextPassword);
+        setErrorIfPresent(
+                registerValidationError, "passwordConfirm",
+                binding.editTextPasswordConfirm);
     }
 
-    private boolean validateLastName(String lastName) {
-        if (TextUtils.isEmpty(lastName)) {
-            binding.editTextLastName.setError(getString(R.string.error_last_name_missing));
-            return false;
-        } else if (lastName.length() < LAST_NAME_LENGTH_MIN) {
-            binding.editTextLastName.setError(getString(R.string.error_last_name_invalid));
-            return false;
-        }
-        binding.editTextLastName.setError(null);
-        return true;
+    private void failServerError(String networkResponseError) throws JSONException {
+
+        JSONObject body = new JSONObject(networkResponseError);
+        showSnackbar(body.getString("body"));
     }
 
-    private boolean validateEmail(String email) {
-        if (TextUtils.isEmpty(email)) {
-            binding.editTextEmail.setError(getString(R.string.error_email_missing));
-            return false;
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.editTextEmail.setError(getString(R.string.error_email_invalid));
-            return false;
+    private void setErrorIfPresent(
+            JSONObject registerValidationError,
+            String fieldName,
+            EditText editText) throws JSONException {
+
+        if (registerValidationError.has(fieldName)) {
+            editText.setError(registerValidationError.getString(fieldName));
+            return;
         }
-        binding.editTextEmail.setError(null);
-        return true;
+        editText.setError(null);
     }
 
-    private boolean validatePassword(String password) {
-        if (TextUtils.isEmpty(password)) {
-            binding.editTextPassword.setError(getString(R.string.error_password_missing));
-            return false;
-        } else if (password.length() < PASSWORD_LENGTH_MIN) {
-            binding.editTextPassword.setError(
-                    getString(R.string.error_password_min_length));
-            return false;
+    private void setEventsEnabled(boolean bool) {
+        if (bool) {
+            getSupportActionBar().setIcon(null);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        } else {
+            getSupportActionBar().setIcon(R.drawable.ic_navigation_back_outlined_24);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
-        binding.editTextPassword.setError(null);
-        return true;
+
+        setBackButtonEnabled = bool;
+
+        binding.editTextGivenName.setEnabled(bool);
+        binding.editTextFamilyName.setEnabled(bool);
+        binding.editTextEmail.setEnabled(bool);
+        binding.editTextPassword.setEnabled(bool);
+        binding.editTextPasswordConfirm.setEnabled(bool);
+
+        binding.buttonRegister.setEnabled(bool);
     }
 
-    private boolean validatePasswordConfirm(String passwordConfirm, String password) {
-        if (TextUtils.isEmpty(passwordConfirm) || !passwordConfirm.matches(password)) {
-            binding.editTextPasswordConfirm.setError(
-                    getString(R.string.error_password_does_not_match));
-            return false;
-        }
-        binding.editTextPasswordConfirm.setError(null);
-        return true;
+    private void showSnackbar(CharSequence text) {
+        Snackbar.make(binding.container, text, Snackbar.LENGTH_LONG).show();
     }
 }

@@ -1,11 +1,15 @@
 package com.au.cit.handbook;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.au.cit.handbook.databinding.ActivityAuthenticationBinding;
+import com.au.cit.handbook.singleton.SharedPrefsManager;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 public class AuthenticationActivity extends AppCompatActivity {
 
@@ -18,30 +22,35 @@ public class AuthenticationActivity extends AppCompatActivity {
         binding = ActivityAuthenticationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        eventListenersInit();
+        initEventListeners();
     }
 
-    /*---------------------------------------------------------------------------
-     * INITIALIZATION
-     *---------------------------------------------------------------------------
-     *
-     *
-     */
-    private void eventListenersInit() {
-        /*---------------------------------------------------------------------------
-         * HANDLERS
-         *---------------------------------------------------------------------------
-         *
-         *
-         */
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences sharedPreferences = SharedPrefsManager.getInstance(this)
+                .sharedPreferences();
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+        if ((sharedPreferences.contains("ip_address") && sharedPreferences.contains("session_token")
+                && sharedPreferences.contains("user_token")) || (account != null)) {
+
+            finish();
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+        }
+    }
+
+    private void initEventListeners() {
         binding.buttonLogin.setOnClickListener(v -> {
             finish();
-            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+            Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
         });
-        binding.buttonSignUp.setOnClickListener(v -> {
+        binding.buttonRegister.setOnClickListener(v -> {
             finish();
-            Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
+            Intent i = new Intent(this, RegisterActivity.class);
             startActivity(i);
         });
     }

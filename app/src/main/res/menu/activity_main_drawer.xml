@@ -3,56 +3,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group>
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_home"
+            android:icon="@drawable/ic_menu_home_outlined_24"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_services"
-            android:icon="@drawable/ic_menu_services"
+            android:icon="@drawable/ic_menu_services_outlined_24"
             android:title="@string/menu_services" />
         <item
             android:id="@+id/nav_uniform"
-            android:icon="@drawable/ic_menu_uniform"
+            android:icon="@drawable/ic_menu_uniform_outlined_24"
             android:title="@string/menu_uniform" />
         <item
             android:id="@+id/nav_map"
-            android:icon="@drawable/ic_menu_map"
+            android:icon="@drawable/ic_menu_map_outlined_24"
             android:title="@string/menu_map" />
         <item
             android:id="@+id/nav_scholarship"
-            android:icon="@drawable/ic_menu_scholarship"
+            android:icon="@drawable/ic_menu_scholarship_outlined_24"
             android:title="@string/menu_scholarship" />
         <item
             android:id="@+id/nav_event"
-            android:icon="@drawable/ic_menu_event"
+            android:icon="@drawable/ic_menu_event_outlined_24"
             android:title="@string/menu_event" />
         <item
             android:id="@+id/nav_studentManual"
-            android:icon="@drawable/ic_menu_student_manual"
+            android:icon="@drawable/ic_menu_student_manual_outlined_24"
             android:title="@string/menu_studentManual" />
         <item
             android:id="@+id/nav_faq"
-            android:icon="@drawable/ic_menu_faq"
+            android:icon="@drawable/ic_menu_faq_outlined_24"
             android:title="@string/menu_faq" />
+    </group>
 
-        <!-- Others... -->
+    <group android:id="@+id/others">
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/ic_menu_about"
+            android:icon="@drawable/ic_menu_about_outlined_24"
             android:title="@string/menu_about" />
         <item
             android:id="@+id/nav_phinmaEducation"
-            android:icon="@drawable/ic_menu_phinma_logo"
+            android:icon="@drawable/ic_menu_phinma_logo_24"
             android:title="@string/menu_phinmaEducation" />
         <item
             android:id="@+id/nav_developers"
-            android:icon="@drawable/ic_menu_developers"
+            android:icon="@drawable/ic_menu_developers_outlined_24"
             android:title="@string/menu_developers" />
         <item
             android:id="@+id/nav_contact"
-            android:icon="@drawable/ic_menu_contact"
+            android:icon="@drawable/ic_menu_contact_outlined_24"
             android:title="@string/menu_contact" />
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_logout_outlined_24"
+            android:menuCategory="system"
+            android:title="@string/menu_logout" />
     </group>
 </menu>

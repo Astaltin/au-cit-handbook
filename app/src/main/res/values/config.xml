@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="WEB_CLIENT_ID">898857046786-ad6765i2qhcltsg0sku7ti5t0rqb44pg.apps.googleusercontent.com</string>
+
+    <string name="BASE_URL">https://cithandbook2024.000webhostapp.com/</string>
+    <string name="AUTH_LOGIN">https://cithandbook2024.000webhostapp.com/auth/login</string>
+    <string name="AUTH_REGISTER">https://cithandbook2024.000webhostapp.com/auth/register</string>
+</resources>
