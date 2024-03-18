@@ -10,8 +10,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.au.cit.handbook.databinding.ActivityRegisterBinding;
@@ -25,6 +27,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressLint("ResourceType")
 public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
@@ -111,6 +114,8 @@ public class RegisterActivity extends AppCompatActivity {
             String givenName, String familyName,
             String email, String password, String passwordConfirm) {
 
+        final int[] code = new int[1];
+
         JSONObject jsonRequest = new JSONObject();
         try {
             jsonRequest.put("givenName", givenName);
@@ -133,14 +138,29 @@ public class RegisterActivity extends AppCompatActivity {
         String url = getString(R.string.AUTH_REGISTER);
         JsonObjectRequest jsonObjectRequest =
                 new JsonObjectRequest(Request.Method.POST, url, jsonRequest,
-                        this::handleResponseSuccess,
-                        this::handleResponseError) {
+                        (response) -> handleResponseSuccess(response, code[0]),
+                        (error) -> handleResponseError(error, code[0])) {
+
                     @Override
                     public Map<String, String> getHeaders() throws AuthFailureError {
                         Map<String, String> headers = new HashMap<>();
                         headers.put("Content-Type", getString(R.string.json));
 
                         return headers;
+                    }
+
+                    @Override
+                    protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
+                        code[0] = response.statusCode;
+
+                        return super.parseNetworkResponse(response);
+                    }
+
+                    @Override
+                    protected VolleyError parseNetworkError(VolleyError error) {
+                        code[0] = error.networkResponse.statusCode;
+
+                        return super.parseNetworkError(error);
                     }
                 };
 
@@ -149,13 +169,16 @@ public class RegisterActivity extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
 
-    private void handleResponseSuccess(JSONObject response) {
+    private void handleResponseSuccess(JSONObject response, int code) {
         try {
-            finish();
-            Intent i = new Intent(this, LoginActivity.class);
-            i.putExtra("email", binding.editTextEmail.getText().toString().trim());
-            i.putExtra("body", response.getString("body"));
-            startActivity(i);
+
+            if (code == Integer.parseInt(getString(R.integer.created))) {
+                finish();
+                Intent i = new Intent(this, LoginActivity.class);
+                i.putExtra("email", binding.editTextEmail.getText().toString().trim());
+                i.putExtra("body", response.getString("body"));
+                startActivity(i);
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -166,8 +189,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("ResourceType")
-    private void handleResponseError(VolleyError error) {
+    private void handleResponseError(VolleyError error, int code) {
 
         if (error.networkResponse == null) {
             return;
@@ -176,13 +198,11 @@ public class RegisterActivity extends AppCompatActivity {
         String networkResponseError =
                 new String(error.networkResponse.data, StandardCharsets.UTF_8);
         try {
-            if (error.networkResponse.statusCode
-                    == Integer.parseInt(getString(R.integer.invalid_data))) {
+            if (code == Integer.parseInt(getString(R.integer.invalid_data))) {
 
                 failValidationError(networkResponseError);
             }
-            if (error.networkResponse.statusCode
-                    == Integer.parseInt(getString(R.integer.server_error))) {
+            if (code == Integer.parseInt(getString(R.integer.server_error))) {
 
                 failServerError(networkResponseError);
             }
