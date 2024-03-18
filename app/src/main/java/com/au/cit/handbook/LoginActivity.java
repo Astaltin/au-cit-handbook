@@ -110,10 +110,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initEventListeners() {
-        binding.buttonLogin.setOnClickListener(this::buttonLoginHandler);
+        binding.buttonLogin.setOnClickListener(this::handleButtonLogin);
     }
 
-    private void buttonLoginHandler(View v) {
+    private void handleButtonLogin(View v) {
         setEventsEnabled(false);
 
         String email = binding.editTextEmail.getText().toString().trim();
@@ -162,6 +162,13 @@ public class LoginActivity extends AppCompatActivity {
 
                         return super.parseNetworkResponse(response);
                     }
+
+                    @Override
+                    protected VolleyError parseNetworkError(VolleyError error) {
+                        code[0] = error.networkResponse.statusCode;
+
+                        return super.parseNetworkError(error);
+                    }
                 };
 
         RequestQueue requestQueue = Volley.getInstance(getApplicationContext())
@@ -185,6 +192,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 finish();
                 Intent i = new Intent(this, MainActivity.class);
+                i.putExtra("authenticator", "local");
                 i.putExtra("body", response.getString("body"));
                 startActivity(i);
             }
@@ -208,13 +216,11 @@ public class LoginActivity extends AppCompatActivity {
         String networkResponseError =
                 new String(error.networkResponse.data, StandardCharsets.UTF_8);
         try {
-            if (error.networkResponse.statusCode
-                    == Integer.parseInt(getString(R.integer.invalid_data))) {
+            if (code == Integer.parseInt(getString(R.integer.invalid_data))) {
 
                 failValidationError(networkResponseError);
             }
-            if (error.networkResponse.statusCode
-                    == Integer.parseInt(getString(R.integer.unauthorized))) {
+            if (code == Integer.parseInt(getString(R.integer.unauthorized))) {
 
                 failUnauthorized(networkResponseError);
             }
@@ -237,8 +243,10 @@ public class LoginActivity extends AppCompatActivity {
                 new JSONObject(networkResponseError)
                         .getJSONObject("loginValidationError");
 
-        setErrorIfPresent(loginValidationError, "email", binding.editTextEmail);
-        setErrorIfPresent(loginValidationError, "password", binding.editTextPassword);
+        setErrorIfPresent(loginValidationError, "email",
+                binding.editTextEmail);
+        setErrorIfPresent(loginValidationError, "password",
+                binding.editTextPassword);
     }
 
     private void failUnauthorized(String networkResponseError) throws JSONException {
@@ -283,20 +291,16 @@ public class LoginActivity extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             Toast.makeText(this, "Logged in", Toast.LENGTH_SHORT).show();
             // Signed in successfully, show authenticated UI.
-            updateUI(account);
+            if (account != null) {
+                finish();
+                Intent i = new Intent(this, MainActivity.class);
+                i.putExtra("authenticator", "google");
+                startActivity(i);
+            }
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
-            updateUI(null);
-        }
-    }
-
-    private void updateUI(GoogleSignInAccount account) {
-        if (account != null) {
-            finish();
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
         }
     }
 

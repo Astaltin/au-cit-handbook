@@ -33,13 +33,31 @@ public class AuthenticationActivity extends AppCompatActivity {
                 .sharedPreferences();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
-        if ((sharedPreferences.contains("ip_address") && sharedPreferences.contains("session_token")
-                && sharedPreferences.contains("user_token")) || (account != null)) {
+        String authenticator = null;
 
+        if (sharedPreferences.contains("ip_address")
+                && sharedPreferences.contains("session_token")
+                && sharedPreferences.contains("user_token")) {
+
+            authenticator = "local";
+        }
+        if (account != null) {
+            authenticator = "google";
+        }
+
+        if (authenticator != null) {
             finish();
             Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("authenticator", authenticator);
             startActivity(i);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        binding = null;
     }
 
     private void initEventListeners() {
