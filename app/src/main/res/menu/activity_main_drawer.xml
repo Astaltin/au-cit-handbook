@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_menu_services_outlined_24"
             android:title="@string/menu_services" />
         <item
+            android:id="@+id/nav_shop"
+            android:icon="@drawable/ic_menu_shop_outlined_24"
+            android:title="@string/menu_shop" />
+        <item
             android:id="@+id/nav_uniform"
             android:icon="@drawable/ic_menu_uniform_outlined_24"
             android:title="@string/menu_uniform" />

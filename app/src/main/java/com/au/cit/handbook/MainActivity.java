@@ -22,6 +22,7 @@ import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.au.cit.handbook.databinding.ActivityMainBinding;
 import com.au.cit.handbook.singleton.SharedPrefsManager;
@@ -102,11 +103,11 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_services, R.id.nav_uniform,
-                R.id.nav_map, R.id.nav_scholarship, R.id.nav_event,
-                R.id.nav_studentManual, R.id.nav_faq, R.id.nav_about,
-                R.id.nav_phinmaEducation, R.id.nav_developers, R.id.nav_contact,
-                R.id.nav_logout)
+                R.id.nav_home, R.id.nav_services, R.id.nav_shop,
+                R.id.nav_uniform, R.id.nav_map, R.id.nav_scholarship,
+                R.id.nav_event, R.id.nav_studentManual, R.id.nav_faq,
+                R.id.nav_about, R.id.nav_phinmaEducation, R.id.nav_developers,
+                R.id.nav_contact, R.id.nav_logout)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(
@@ -176,10 +177,12 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest =
                 new JsonObjectRequest(Request.Method.GET, url, null,
                         (response) -> handleResponseSuccess(response, code[0]),
-                        null) {
+                        this::handleResponseError) {
 
                     @Override
-                    protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
+                    protected Response<JSONObject> parseNetworkResponse(
+                            NetworkResponse response) {
+
                         code[0] = response.statusCode;
 
                         return super.parseNetworkResponse(response);
@@ -211,6 +214,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void handleResponseError(VolleyError error) {
+
+        if (error.networkResponse == null) {
+
+            return;
+        }
+
+        if (error.networkResponse.statusCode
+                == Integer.parseInt(getString(R.integer.server_error))) {
+
+            showSnackbar("Something went wrong.");
+        }
+    }
+
     private void initLogoutHandler() {
         Menu navigationMenu = navigationView.getMenu();
         navigationMenu.findItem(R.id.nav_logout).setOnMenuItemClickListener((item) -> {
@@ -236,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
-            
+
             return true;
         });
     }

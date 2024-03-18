@@ -16,6 +16,11 @@
         android:label="@string/menu_services"
         tools:layout="@layout/fragment_services" />
     <fragment
+        android:id="@+id/nav_shop"
+        android:name="com.au.cit.handbook.ui.ShopFragment"
+        android:label="@string/menu_shop"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
         android:id="@+id/nav_uniform"
         android:name="com.au.cit.handbook.ui.UniformFragment"
         android:label="@string/menu_uniform"
