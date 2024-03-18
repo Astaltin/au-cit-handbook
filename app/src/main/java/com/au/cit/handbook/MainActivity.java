@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             finish();
-            Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
 
