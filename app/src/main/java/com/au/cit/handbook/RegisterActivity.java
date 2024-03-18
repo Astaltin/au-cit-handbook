@@ -139,7 +139,7 @@ public class RegisterActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest =
                 new JsonObjectRequest(Request.Method.POST, url, jsonRequest,
                         (response) -> handleResponseSuccess(response, code[0]),
-                        (error) -> handleResponseError(error, code[0])) {
+                        this::handleResponseError) {
 
                     @Override
                     public Map<String, String> getHeaders() throws AuthFailureError {
@@ -189,7 +189,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void handleResponseError(VolleyError error, int code) {
+    private void handleResponseError(VolleyError error) {
 
         if (error.networkResponse == null) {
             return;
@@ -198,11 +198,11 @@ public class RegisterActivity extends AppCompatActivity {
         String networkResponseError =
                 new String(error.networkResponse.data, StandardCharsets.UTF_8);
         try {
-            if (code == Integer.parseInt(getString(R.integer.invalid_data))) {
+            if (error.networkResponse.statusCode == Integer.parseInt(getString(R.integer.invalid_data))) {
 
                 failValidationError(networkResponseError);
             }
-            if (code == Integer.parseInt(getString(R.integer.server_error))) {
+            if (error.networkResponse.statusCode == Integer.parseInt(getString(R.integer.server_error))) {
 
                 failServerError(networkResponseError);
             }
