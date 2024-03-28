@@ -1,256 +1,188 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainuniform"
     android:background="@color/grayshade"
-    tools:context=".ui.ScholarshipFragment">
+    tools:context=".ui.UniformFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="32dp"
-        tools:context=".ui.UniformFragment">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="410dp"
-            android:layout_height="220dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/unidorms" />
-
-        <TextView
-            android:id="@+id/textUniform"
+        <!-- Wrap the two LinearLayouts inside another ViewGroup -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="UNIFORMS"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.0" />
+            android:id="@+id/uniformview"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/body1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="10dp"
-            android:text="Here are some of the Department Uniforms for College Students :"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textUniform" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView1"
-            android:layout_width="150dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineCenter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/body1">
-
-            <TextView
-                android:id="@+id/textContent1"
+            <LinearLayout
+                android:id="@+id/phinma_logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="INFORMATION TECHNOLOGY"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:background="@color/white_200"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/phinma_logo_vertical_spacing"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/phinma_logo_vertical_spacing"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/about_phinma"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-            <ImageView
-                android:id="@+id/cardImage1"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="75dp"
-                app:srcCompat="@drawable/it" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:importantForAccessibility="no"
+                    app:srcCompat="@drawable/phinma_logo" />
+            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            android:layout_width="150dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guidelineCenter"
-            app:layout_constraintTop_toBottomOf="@id/body1">
-
-            <TextView
-                android:id="@+id/textContent2"
+            <LinearLayout
+                android:id="@+id/about_phinma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="CIVIL ENGINEERING"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:background="@color/white_100"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/phinma_logo_vertical_spacing"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_spacing"
+                app:layout_constraintBottom_toTopOf="@+id/mission"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phinma_logo">
 
-            <ImageView
-                android:id="@+id/cardImage2"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="75dp"
-                app:srcCompat="@drawable/ce" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="Uniforms"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/heading_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
 
-        </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:fontFamily="@font/roboto"
+                    android:text="Here are some of the Department Uniforms for College Students :"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
-            android:layout_width="150dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineCenter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView1">
+                <LinearLayout
+                    android:id="@+id/uniform"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/phinma_logo_vertical_spacing"
+                    android:paddingEnd="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/phinma_logo_vertical_spacing"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/about_phinma"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
 
-            <TextView
-                android:id="@+id/textContent3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="ACCOUNTANCY"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                    <!-- Card for B.S.I.T Corporate Uniform -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/body_vertical_spacing"
+                        app:cardCornerRadius="@dimen/cardview_default_radius">
 
-            <ImageView
-                android:id="@+id/cardImage3"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="75dp"
-                app:srcCompat="@drawable/accountancy" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
-        </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/uniformTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="@dimen/body_vertical_spacing"
+                                android:background="@drawable/bg_blue_rounded"
+                                android:fontFamily="@font/roboto_bold"
+                                android:padding="15dp"
+                                android:text="B.S.I.T Uniform"
+                                android:textAlignment="center"
+                                android:textColor="@color/white_100"
+                                android:textSize="@dimen/body_text_normal"
+                                app:lineHeight="@dimen/body_lineHeight_normal" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView4"
-            android:layout_width="150dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guidelineCenter"
-            app:layout_constraintTop_toBottomOf="@id/cardView2">
+                            <ImageView
+                                android:id="@+id/uniformImageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="125dp"
+                                android:importantForAccessibility="no"
+                                app:srcCompat="@drawable/it" />
 
-            <TextView
-                android:id="@+id/textContent4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="NURSING"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                            <Button
+                                android:id="@+id/uniformActivityButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="View Details"/>
 
-            <ImageView
-                android:id="@+id/cardImage4"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="75dp"
-                app:srcCompat="@drawable/nursing" />
+                        </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView5"
-            android:layout_width="150dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineCenter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView3">
+                    <!-- Card for B.S.C.E Corporate Uniform -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardview_default_radius">
 
-            <TextView
-                android:id="@+id/textContent5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="EDUCATION"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/cardImage5"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="75dp"
-                app:srcCompat="@drawable/teacher" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="@dimen/body_vertical_spacing"
+                                android:background="@drawable/bg_blue_rounded"
+                                android:fontFamily="@font/roboto_bold"
+                                android:padding="15dp"
+                                android:text="B.S.C.E Uniform"
+                                android:textAlignment="center"
+                                android:textColor="@color/white_100"
+                                android:textSize="@dimen/body_text_normal"
+                                app:lineHeight="@dimen/body_lineHeight_normal" />
 
-        </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="125dp"
+                                android:importantForAccessibility="no"
+                                app:srcCompat="@drawable/ce" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView6"
-            android:layout_width="150dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guidelineCenter"
-            app:layout_constraintTop_toBottomOf="@id/cardView4">
+                            <Button
+                                android:id="@+id/uniformButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="View Details"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/textContent6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="CRIMINOLOGY"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage6"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="75dp"
-                app:srcCompat="@drawable/crim" />
-        </androidx.cardview.widget.CardView>
+                </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

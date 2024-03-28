@@ -1,846 +1,450 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grayshade"
-    tools:context=".ui.ScholarshipFragment">
+    tools:context=".ui.scholarship.ScholarshipFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grayshade"
-        tools:context=".ui.ScholarshipFragment">
+        android:scrollbars="none">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="0dp"
-            android:layout_height="220dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/unidorms" />
-
-        <TextView
-            android:id="@+id/text_scholarship"
+        <!-- Wrap the two LinearLayouts inside another ViewGroup -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="SCHOLARSHIPS"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.0" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/body1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="10dp"
-            android:text="Most importantly, our education is affordable. We do not charge any hidden or unnecessary fees. We support deserving students throughout their tertiary learning years by offering scholarship programs. Our Handog Kaibigan Scholarship Program provides a 50% discount on tuition and miscellaneous fees for our more financially-challenged students."
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_scholarship" />
-
-        <TextView
-            android:id="@+id/body2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
-            android:padding="10dp"
-            android:text="Check our complete list of scholarships below:"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_scholarship" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView1"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/body2">
-
-            <TextView
-                android:id="@+id/textContent1"
+            <LinearLayout
+                android:id="@+id/phinma_logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="PHINMA National Scholarship"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:background="@color/white_200"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/phinma_logo_vertical_spacing"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/phinma_logo_vertical_spacing"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/about_phinma"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-            <ImageView
-                android:id="@+id/cardImage1"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:importantForAccessibility="no"
+                    app:srcCompat="@drawable/phinma_logo" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textContent1.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="The scholarship aims to bring in the best and the brightest students from Nueva Ecija, Nueva Vizcaya and Aurora. Renewable every semester with maintaining \ grade (no grade lower than 2.00 and GPA not lower than 1.75)"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent1.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent1.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - 100% Tuition and Fees, other fees, miscellaneous, and laboratory fees. \n- Php 4,000 monthly allowance"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView1">
-
-            <TextView
-                android:id="@+id/textContent2"
+            <LinearLayout
+                android:id="@+id/about_phinma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Academic Scholarship"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage2"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent2.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent2.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:padding="16dp"
-                android:text=" - 100% Free Tuition Fee for valedictorians / 50% for salutatorians; renewable every semester with maintaining grade (no grade lower than 2.00 and GPA not lower than 1.75)"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView2">
-
-            <TextView
-                android:id="@+id/textContent3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Dean Lister"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage3"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent3.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="- Top 10 on Dean’s list will receive 100% tuition (PHINMA Scholars, Valedictorian, Salutatorian not included) \n
-Note: To be identified by the Registrar’s office
-"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent3.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent3.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - 100% Tuition and Fees, other fees, miscellaneous, and laboratory fees. \n- Php 4,000 monthly allowance"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView4"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView3">
-
-            <TextView
-                android:id="@+id/textContent4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Dean Lister"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage4"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent4.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent4.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:padding="16dp"
-                android:text=" - 50% on Tuition and Miscellaneous fees. The scholarship is good for 4 years or 5 years for Engineering."
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView5"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView4">
-
-            <TextView
-                android:id="@+id/textContent5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Educational Discount for Government Employees (EDGE)"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage5"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent5.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="- The scholarship aims to bring in the best and the brightest students from Nueva Ecija, Nueva Vizcaya and Aurora. Renewable every semester with maintaining grade (no grade lower than 2.00 and GPA not lower than 1.75)"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent5.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent5.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - 25% discount on Tuition Fee"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView6"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView5">
-
-            <TextView
-                android:id="@+id/textContent6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Solo Parent"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage6"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent6.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="- The scholarship aims to help solo parents who are solely supporting their children in their educational needs."
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent6.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent6.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - 25% discount on Tuition Fee"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView7"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView6">
-
-            <TextView
-                android:id="@+id/textContent7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Alumni Discount"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage7"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent7.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="- The scholarship aims to help solo parents who are solely supporting their children in their educational needs."
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent7.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent7.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - 10% discount on Tuition Fee"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView8"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView7">
-
-            <TextView
-                android:id="@+id/textContent8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Kapamilya Discount"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage8"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent8.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="- The scholarship entitles students to avail of discounts depending on the number of siblings enrolled in the university at the same time. \n - Requirements : Birth certificates of both students enrolled to be submitted to accounting"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent8.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent8.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - 2nd child enrolled – 10% discount on Tuition Fee\n
-3rd child enrolled – 25% discount on Tuition Fee\n
-4th child enrolled – 50% discount on Tuition Fee"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView9"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView8">
-
-            <TextView
-                android:id="@+id/textContent9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Student Assistantship"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage9"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent9.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="- This scholarship is given to students who are willing to study and “work” at the same time in the University. Requirements: Should pass the examination and interview."
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent9.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent9.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - 100% free on Tuition Fee (maximum of 24 units and for Active Learning Facilitators depending on the hours and subject that they will handle)"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView10"
-            android:layout_width="300dp"
-            android:layout_height="290dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView9">
-
-            <TextView
-                android:id="@+id/textContent10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Scholarship Benefit for Employee Dependents"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage10.1"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent10.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="Benefits are availbale to :"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent10.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:padding="16dp"
-                android:text=" - Regular non-teaching employees\n
-Tenured faculty member\n
-Full-time contractual/probationary faculty, who have served at least 2 semesters in the institution\n\n
-For married/single employees:\n
-
-A spouse may avail of a 50% scholarship for the Graduate School Department.\n\n
-Dependent children or siblings may avail of a scholarship subject to the guidelines below:\n
-Limitations:\n\n
-
-Maximum of four (4) children or siblings at any given point in time\n
-Aged 21 years or younger at the time of registration\n
-Coverage:\n\n
-
-100% scholarship for Elementary, Secondary, or Tertiary Programs for the three (3) eldest children in the institution; or for one (1) sibling\n
-50% scholarship for Elementary, Secondary, or Tertiary Programs for the fourth\n
-50% scholarship for Elementary, Secondary, or Tertiary Programs for the rest of the siblings"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView11"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView8"
-            app:layout_goneMarginBottom="16dp">
-
-            <TextView
-                android:id="@+id/textContent11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Performing Arts"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage11"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent11.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="- Students who are members of the performing arts (Company of Araullian Dancers)."
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent11.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent11.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - Scholarship will depend on the skill performance and evaluation in the company (maximum of 21 units) with a year of residency."
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView12"
-            android:layout_width="300dp"
-            android:layout_height="270dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white_100"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView8"
-            app:layout_goneMarginBottom="16dp">
-
-            <TextView
-                android:id="@+id/textContent12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="AUSSG Financial Assistance
-"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/cardImage12"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="55dp"
-                app:srcCompat="@drawable/toga" />
-
-            <TextView
-                android:id="@+id/textContent12.1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:padding="16dp"
-                android:text="- Student applicant must pass the screening process of the student body."
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/textContent12.2"
-                android:layout_width="181dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:padding="16dp"
-                android:text="Benefits:"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textContent12.3"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="185dp"
-                android:padding="16dp"
-                android:text=" - Financial assistance worth Php 3,500 (with limited slots only)."
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="10sp" />
-
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+                android:background="@color/white_100"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/phinma_logo_vertical_spacing"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_spacing"
+                app:layout_constraintBottom_toTopOf="@+id/mission"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phinma_logo">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="Scholarships"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/heading_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:fontFamily="@font/roboto"
+                    android:text=" Our education remains budget-friendly, devoid of concealed or extraneous charges. We stand by students in need throughout their tertiary education, extending support through scholarship programs. Specifically, our 'Handog Kaibigan Scholarship Program' grants a 50% discount on tuition and miscellaneous fees, assisting students facing financial challenges."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:fontFamily="@font/roboto"
+                    android:text="Check our complete list of scholarships below:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="1. PHINMA National Scholarship"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="The scholarship aims to bring in the best and the brightest students from Nueva Ecija, Nueva Vizcaya and Aurora. Renewable every semester with maintaining grade (no grade lower than 2.00 and GPA not lower than 1.75)
+                                    \nBenefits:
+                                    \n- 100% Tuition and Fees, other fees, miscellaneous, and laboratory fees.
+                                    \n- Php 4,000 monthly allowance"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+
+                <!--===========================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="2. Academic Scholarship"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="Benefits:\n
+
+- 100% Free Tuition Fee for valedictorians / 50% for salutatorians; renewable every semester with maintaining grade (no grade lower than 2.00 and GPA not lower than 1.75)"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <!--                =============================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="3. Dean Lister"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="Top 10 on Dean’s list will receive 100% tuition (PHINMA Scholars, Valedictorian, Salutatorian not included)
+                                   \nNote: To be identified by the Registrar’s office
+                                   \n
+                                    \nTop 11-25 on Dean’s list will receive 50% tuition (PHINMA Scholars, Valedictorian, Salutatorian not included)
+                                    \nNote: To be identified by the Registrar’s office"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <!--                =========================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="4. Handog Kaibigan Scholarship"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="Benefits:
+                                    \n50% on Tuition and Miscellaneous fees. The scholarship is good for 4 years or 5 years for Engineering."
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+                <!--                ================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="5. Educational Discount for Government Employees (EDGE)"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="The scholarship aims to bring in the best and the brightest students from Nueva Ecija, Nueva Vizcaya and Aurora. Renewable every semester with maintaining grade (no grade lower than 2.00 and GPA not lower than 1.75)
+                                    \nBenefits:
+                                    \n25% discount on Tuition Fee"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+                <!--                ==================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="6. Solo Parent"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="The scholarship aims to help solo parents who are solely supporting their children in their educational needs.
+                                    \nBenefits:
+                                    \n25% discount on Tuition Fee"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+                <!--                =============================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="7. Alumni Discount"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="The scholarship aims to help solo parents who are solely supporting their children in their educational needs.
+                                  \nBenefits:
+                                  \n10% discount on Tuition Fee"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+                <!--                =====================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="8. Kapamilya Discount"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="The scholarship entitles students to avail of discounts depending on the number of siblings enrolled in the university at the same time.
+                                  \nRequirements : Birth certificates of both students enrolled to be submitted to accounting
+                                  \nBenefits:
+                                  \n2nd child enrolled – 10% discount on Tuition Fee
+                                  \n3rd child enrolled – 25% discount on Tuition Fee
+                                  \n4th child enrolled – 50% discount on Tuition Fee"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+                <!--                ========================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="9. Student Assistantship"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="This scholarship is given to students who are willing to study and “work” at the same time in the University. Requirements: Should pass the examination and interview
+                                  \nBenefits:
+                                  \n100% free on Tuition Fee (maximum of 24 units and for Active Learning Facilitators depending on the hours and subject that they will handle)"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+                <!--                ========================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="10. Scholarship Benefit for Employee Dependents"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="The benefits are available to:
+                                  \nRegular non-teaching employees
+                                  \nTenured faculty member
+                                  \nFull-time contractual/probationary faculty, who have served at least 2 semesters in the institution
+                                  \nFor married/single employees:
+                                  \nA spouse may avail of a 50% scholarship for the Graduate School Department.
+                                  \nDependent children or siblings may avail of a scholarship subject to the guidelines below:
+                                  \nLimitations:
+                                  \nMaximum of four (4) children or siblings at any given point in time
+                                  \nAged 21 years or younger at the time of registration
+                                  \nCoverage:
+                                  \n100% scholarship for Elementary, Secondary, or Tertiary Programs for the three (3) eldest children in the institution; or for one (1) sibling
+                                  \n50% scholarship for Elementary, Secondary, or Tertiary Programs for the fourth
+                                  \n50% scholarship for Elementary, Secondary, or Tertiary Programs for the rest of the siblings"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+                <!--                ========================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="11. Performing Arts"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="Students who are members of the performing arts (Company of Araullian Dancers)
+                                  \nBenefits:
+                                  \nScholarship will depend on the skill performance and evaluation in the company (maximum of 21 units) with a year of residency."
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+                <!--                ========================================================-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="12. AUSSG Financial Assistance"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/body_vertical_spacing"
+                    android:background="@drawable/bg_blue_rounded"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="15dp"
+                    android:text="Student applicant must pass the screening process of the student body.
+                                 \nBenefits:
+                                 \nFinancial assistance worth Php 3,500 (with limited slots only)"
+                    android:textColor="@color/white_100"
+                    android:textSize="@dimen/body_text_normal"
+                    app:lineHeight="@dimen/body_lineHeight_normal" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -82,6 +83,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.shop_main, menu);
+
+        MenuItem shopAdd = menu.findItem(R.id.shop_add);
+        shopAdd.setOnMenuItemClickListener((item) -> {
+
+            Intent i = new Intent(this, ReservationsActivity.class);
+            startActivity(i);
+
+            return true;
+        });
+        
+        return true;
+    }
+
+    @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(
                 this, R.id.nav_host_fragment_content_main);
@@ -155,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                         finish();
                         Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(this, LoginActivity.class);
-                        startActivity(i);
+                        startActivity(i);   
                     });
             return true;
         });

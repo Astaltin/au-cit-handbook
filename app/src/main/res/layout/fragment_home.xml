@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white_100"
     android:importantForAccessibility="no"
+    android:scrollbars="none"
     tools:context=".ui.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -56,6 +56,19 @@
             android:exported="false"
             android:screenOrientation="locked"
             android:theme="@style/Theme.AUStudentHandbook.NoActionBar" />
+        <activity
+            android:name=".ReservationsActivity"
+            android:exported="false"
+            android:label="@string/shop_reservations"
+            android:screenOrientation="locked"
+            android:theme="@style/Theme.AUStudentHandbook.NoActionBar" />
+        <activity
+            android:name=".ShopItemActivity"
+            android:exported="false"
+            android:label=""
+            android:screenOrientation="locked"
+            android:theme="@style/Theme.AUStudentHandbook.NoActionBar" />
+
     </application>
 
 </manifest>

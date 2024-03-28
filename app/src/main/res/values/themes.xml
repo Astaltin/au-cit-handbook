@@ -38,5 +38,7 @@
 
     <style name="Theme.AUStudentHandbook.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
         <item name="tint">@color/black</item>
+
+        <item name="fontFamily">@font/roboto_bold</item>
     </style>
 </resources>

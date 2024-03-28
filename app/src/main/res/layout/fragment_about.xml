@@ -47,10 +47,10 @@
                 android:paddingTop="@dimen/phinma_logo_vertical_spacing"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:paddingBottom="@dimen/activity_vertical_spacing"
-                app:layout_constraintBottom_toTopOf="@+id/mission"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phinma_logo">
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -65,12 +65,19 @@
                     android:textSize="@dimen/heading_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="25dp"
+                    android:importantForAccessibility="no"
+                    app:srcCompat="@drawable/img_about" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="Welcome to CIT Informative Guide, the essential companion tailored exclusively for students of the esteemed College of Information Technology (CIT). Whether you're a fresh face navigating the intricacies of IT academia or a seasoned student aiming to deepen your engagement within the CIT community, this app is designed to cater to your diverse needs, aspirations, and academic goals."
+                    android:text="Welcome to AU CIT Handbook, the essential companion tailored exclusively for students of the esteemed College of Information Technology (CIT). Whether you're a fresh face navigating the intricacies of IT academia or a seasoned student aiming to deepen your engagement within the CIT community, this app is designed to cater to your diverse needs, aspirations, and academic goals."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -80,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="CIT Informative Guide is your digital roadmap to success within CIT. Packed with features and functionalities, it offers practical tips, curated resources, event updates, faculty profiles, and feedback mechanisms. Stay informed and engaged with the latest events and networking opportunities, access curated resources and tutorials, get to know your faculty, and never miss a class with our scheduling feature."
+                    android:text="AU CIT Handbook is your digital roadmap to success within CIT. Packed with features and functionalities, it offers practical tips, curated resources, event updates, faculty profiles, and feedback mechanisms. Stay informed and engaged with the latest events and networking opportunities, access curated resources and tutorials, get to know your faculty, and never miss a class with our scheduling feature."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />

@@ -47,7 +47,6 @@
                 android:paddingTop="@dimen/phinma_logo_vertical_spacing"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:paddingBottom="@dimen/activity_vertical_spacing"
-                app:layout_constraintBottom_toTopOf="@+id/mission"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phinma_logo">
@@ -70,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="What is CIT Informative Guide?"
+                    android:text="What is AU CIT Handbook?"
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -80,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="CIT Informative Guide is your digital roadmap to success within CIT. Packed with features and functionalities, it offers practical tips, curated resources, event updates, faculty profiles, and feedback mechanisms. Stay informed and engaged with the latest events and networking opportunities, access curated resources and tutorials, get to know your faculty, and never miss a class with our scheduling feature."
+                    android:text="AU CIT Handbook is your digital roadmap to success within CIT. Packed with features and functionalities, it offers practical tips, curated resources, event updates, faculty profiles, and feedback mechanisms. Stay informed and engaged with the latest events and networking opportunities, access curated resources and tutorials, get to know your faculty, and never miss a class with our scheduling feature."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -90,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="What features does CIT Informative Guide offer?"
+                    android:text="What features does AU CIT Handbook offer?"
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -100,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="CIT Informative Guide offers various features including college tips, IT tips, event updates, links to programming channels, faculty profiles, schedule management, and a feedback survey for continuous improvement."
+                    android:text="AU CIT Handbook offers various features including college tips, IT tips, event updates, links to programming channels, faculty profiles, schedule management, and a feedback survey for continuous improvement."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -110,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Who can use CIT Informative Guide?"
+                    android:text="Who can use AU CIT Handbook?"
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -120,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="CIT Informative Guide is specifically designed for students enrolled in the College of Information Technology (CIT). However, anyone interested in learning more about CIT events, resources, and faculty can also benefit from using the app."
+                    android:text="AU CIT Handbook is specifically designed for students enrolled in the College of Information Technology (CIT). However, anyone interested in learning more about CIT events, resources, and faculty can also benefit from using the app."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -130,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Is CIT Informative Guide available for all mobile platforms?"
+                    android:text="Is AU CIT Handbook available for all mobile platforms?"
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -140,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="Currently, CIT Informative Guide is available for Android devices. However, plans for expanding to other platforms such as iOS may be considered in the future."
+                    android:text="Currently, AU CIT Handbook is available for Android devices. However, plans for expanding to other platforms such as iOS may be considered in the future."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -150,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="How can I provide feedback or suggest improvements for CIT Informative Guide?"
+                    android:text="How can I provide feedback or suggest improvements for AU CIT Handbook?"
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -160,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="You can provide feedback and suggestions for CIT Informative Guide through the app's feedback survey feature. Your input is valuable in helping us enhance the app and better serve the CIT community."
+                    android:text="You can provide feedback and suggestions for AU CIT Handbook through the app's feedback survey feature. Your input is valuable in helping us enhance the app and better serve the CIT community."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -170,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Are the resources and tips provided in CIT Informative Guide relevant to all CIT students?"
+                    android:text="Are the resources and tips provided in AU CIT Handbook relevant to all CIT students?"
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -180,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="Yes, the resources and tips provided in CIT Informative Guide are curated to be relevant and beneficial for all CIT students, including freshmen and upperclassmen. Whether you're just starting your journey in IT academia or furthering your studies, you'll find valuable information tailored to your needs."
+                    android:text="Yes, the resources and tips provided in AU CIT Handbook are curated to be relevant and beneficial for all CIT students, including freshmen and upperclassmen. Whether you're just starting your journey in IT academia or furthering your studies, you'll find valuable information tailored to your needs."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -190,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="How frequently are event updates and new resources added to CIT Informative Guide?"
+                    android:text="How frequently are event updates and new resources added to AU CIT Handbook?"
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -200,7 +199,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="Event updates and new resources are added to CIT Informative Guide regularly to ensure that students have access to the latest information and resources. You can stay informed by checking the app regularly or enabling notifications for important updates."
+                    android:text="Event updates and new resources are added to AU CIT Handbook regularly to ensure that students have access to the latest information and resources. You can stay informed by checking the app regularly or enabling notifications for important updates."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -210,7 +209,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Can I access CIT Informative Guide offline?"
+                    android:text="Can I access AU CIT Handbook offline?"
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
@@ -220,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/body_vertical_spacing"
                     android:fontFamily="@font/roboto"
-                    android:text="While some features of CIT Informative Guide may require an internet connection to access real-time updates, resources, and event information, certain sections of the app may be accessible offline for your convenience."
+                    android:text="While some features of AU CIT Handbook may require an internet connection to access real-time updates, resources, and event information, certain sections of the app may be accessible offline for your convenience."
                     android:textColor="@color/black"
                     android:textSize="@dimen/body_text_normal"
                     app:lineHeight="@dimen/body_lineHeight_normal" />
